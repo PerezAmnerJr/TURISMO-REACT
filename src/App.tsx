@@ -7,6 +7,7 @@ import { Paginacion } from './components/Paginacion';
 import { DetallelugarAr } from './components/Detallelugar';
 import AnimatedBackground from './components/AnimatedBackground';
 import BlurText from "./components/BlurText";
+import { motion } from "framer-motion";
 
 import './App.css';
 
@@ -107,13 +108,17 @@ export default function App() {
 
       <div className="app-container">
         <header className="app-header">
-  <h1>
-    <BlurText
-      text="🌍 Descubre Lugares Turísticos"
-      delay={0}
-      className="titulo-principal"
-    />
-  </h1>
+ <h1 className="titulo-header">
+  <motion.span
+    style={{ display: "inline-block" }}
+    animate={{ rotate: 360 }}
+    transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
+  >
+    🌍
+  </motion.span>
+  Descubre Lugares Turísticos
+</h1>
+
 
   <p>
     <BlurText

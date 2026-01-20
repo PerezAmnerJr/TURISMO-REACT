@@ -97,3 +97,21 @@
   font-size: 1.2rem;
   color: #dcdcff;
 }
+
+.titulo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.icono-mundo {
+  display: inline-block;
+  animation: girarMundo 3s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes girarMundo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
