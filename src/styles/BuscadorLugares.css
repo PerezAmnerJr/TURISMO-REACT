@@ -1,0 +1,54 @@
+.buscador-wrapper {
+  width: 100%;
+}
+
+.buscador-input-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.buscador-input {
+  width: 100%;
+  padding: 18px 52px 18px 18px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  outline: none;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.buscador-input:focus {
+  border-color: rgba(90, 120, 255, 0.9);
+}
+
+.buscador-icon {
+  position: absolute;
+  right: 16px;
+  font-size: 18px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.buscador-clear {
+  position: absolute;
+  right: 42px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.buscador-loading {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+  color: white;
+}
+
+.buscador-input {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px);
+}

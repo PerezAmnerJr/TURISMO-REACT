@@ -1,0 +1,99 @@
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.app-main {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.resultados-info {
+  margin: 20px 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.resultados-info p {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+  }
+
+  .app-main {
+    padding: 15px;
+  }
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Quita el panel blanco para que se vea el fondo animado */
+.app-main {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Si tu contenedor grande también tenía blanco */
+.app-container {
+  background: transparent !important;
+}
+
+/* Si tenías un contenedor tipo "panel" (a veces se llama así) */
+.panel,
+.contenedor,
+.main-card,
+.content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.app-main {
+  padding: 24px 0;
+}
+
+.titulo-principal {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  color: #dcdcff;
+}
