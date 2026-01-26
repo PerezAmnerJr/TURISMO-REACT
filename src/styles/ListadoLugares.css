@@ -1,202 +1,129 @@
+/* CONTENEDOR: GRID RESPONSIVE */
 .listado-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-  margin: 30px 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  padding: 18px 0;
+
+  /* ✅ evita que el grid “se estire raro” en pantallas grandes */
+  align-items: stretch;
 }
 
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1100px) {
+  .listado-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .listado-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .listado-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 14px 0;
+
+    /* ✅ centra la card cuando es 1 columna */
+    justify-items: center;
+  }
+}
+
+/* CARD: MISMO ALTO + MISMO ANCHO */
 .lugar-card {
-  background: white;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+
   display: flex;
   flex-direction: column;
-  border: 2px solid transparent;
-}
+  min-height: 420px;
 
-.lugar-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-color: #667eea;
+  /* ✅ en móvil (1 columna) que no quede gigante ni desalineada */
+  width: 100%;
+  max-width: 520px;
 }
 
 .lugar-imagen {
-  width: 100%;
-  height: 200px;
+  height: 190px;
+  background: rgba(0, 0, 0, 0.06);
   overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .lugar-imagen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.lugar-card:hover .lugar-imagen img {
-  transform: scale(1.1);
+  display: block;
 }
 
 .imagen-placeholder {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-size: 3rem;
+  display: grid;
+  place-items: center;
+  font-size: 44px;
 }
 
 .lugar-contenido {
   padding: 16px;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  gap: 8px;
 }
 
-.lugar-contenido h3 {
-  font-size: 1.2rem;
-  color: #333;
-  margin-bottom: 8px;
-  line-height: 1.3;
+.lugar-titulo {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.15;
+
+  /* máximo 2 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .pais {
-  font-size: 0.85rem;
-  color: #667eea;
+  margin: 0;
+  color: #5b6cff;
   font-weight: 600;
-  margin-bottom: 8px;
 }
 
 .descripcion {
-  font-size: 0.9rem;
-  color: #666;
-  line-height: 1.5;
-  flex-grow: 1;
-  margin-bottom: 12px;
+  margin: 0;
+  color: #555;
+  line-height: 1.35;
+
+  /* máximo 3 líneas */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .ver-mas {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin-top: auto;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6376ff, #7b4bb8);
   color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: transform 0.2s ease;
-  align-self: flex-start;
-}
-
-.ver-mas:hover {
-  transform: translateX(4px);
+  font-weight: 800;
 }
 
 .cargando,
 .sin-resultados {
-  text-align: center;
-  padding: 60px 20px;
-  font-size: 1.1rem;
-  color: #999;
-}
-
-.cargando::after {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-  border: 3px solid #e0e0e0;
-  border-top-color: #667eea;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 1024px) {
-  .listado-container {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .listado-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-  }
-
-  .lugar-imagen {
-    height: 150px;
-  }
-
-  .lugar-contenido h3 {
-    font-size: 1rem;
-  }
-
-  .descripcion {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .listado-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* =========================
-   📱 Cards responsive
-   ========================= */
-
-@media (max-width: 1024px) {
-  .listado-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .listado-container {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .lugar-card {
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  .lugar-imagen img {
-    height: 200px; /* evita imágenes enormes */
-    object-fit: cover;
-  }
-
-  .lugar-contenido h3 {
-    font-size: 1.15rem;
-  }
-
-  .descripcion {
-    font-size: 0.98rem;
-  }
-
-  .ver-mas {
-    width: 100%;
-  }
-}
-
-@media (max-width: 420px) {
-  .lugar-imagen img {
-    height: 180px;
-  }
+  color: rgba(255, 255, 255, 0.85);
+  padding: 20px 0;
 }
