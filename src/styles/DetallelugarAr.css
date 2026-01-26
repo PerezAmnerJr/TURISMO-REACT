@@ -212,3 +212,42 @@
 .modal-contenido::-webkit-scrollbar-thumb:hover {
   background: #764ba2;
 }
+
+/* =========================
+   📱 Modal responsive
+   ========================= */
+
+@media (max-width: 768px) {
+  .modal-contenido {
+    width: calc(100% - 20px);
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 16px;
+  }
+
+  .modal-imagen {
+    max-height: 220px;
+    object-fit: cover;
+  }
+
+  .modal-cerrar {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+
+  .modal-cuerpo h1 {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .modal-descripcion p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .modal-enlace {
+    width: 100%;
+    text-align: center;
+  }
+}

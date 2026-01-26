@@ -80,3 +80,33 @@
     font-size: 0.9rem;
   }
 }
+
+/* =========================
+   📱 Paginación responsive
+   ========================= */
+
+@media (max-width: 768px) {
+  .paginacion-container {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .paginacion-numeros {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .paginacion-btn {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .paginacion-numero {
+    min-width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+}

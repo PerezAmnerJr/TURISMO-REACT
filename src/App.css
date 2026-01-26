@@ -90,7 +90,7 @@
 .titulo-principal {
   font-size: 3rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #eceeef;
 }
 
 .subtitulo {
@@ -114,4 +114,58 @@
 @keyframes girarMundo {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+/* =========================
+   📱 Responsive móvil fino
+   ========================= */
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 12px;
+  }
+
+  .app-header {
+    padding: 28px 12px 12px;
+  }
+
+  .app-header h1,
+  .titulo-header {
+    font-size: 1.8rem;
+    line-height: 1.15;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .app-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+    text-align: center;
+  }
+
+  .app-main {
+    padding: 12px 0 28px;
+  }
+
+  .resultados-info {
+    margin: 10px 0 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .app-header h1,
+  .titulo-header {
+    font-size: 1.55rem;
+  }
+}
+
+/* ✅ En móvil, que use todo el ancho */
+@media (max-width: 768px) {
+  .app-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 12px; /* puedes subir/bajar este valor */
+  }
 }

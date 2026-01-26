@@ -154,3 +154,49 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   📱 Cards responsive
+   ========================= */
+
+@media (max-width: 1024px) {
+  .listado-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .listado-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .lugar-card {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .lugar-imagen img {
+    height: 200px; /* evita imágenes enormes */
+    object-fit: cover;
+  }
+
+  .lugar-contenido h3 {
+    font-size: 1.15rem;
+  }
+
+  .descripcion {
+    font-size: 0.98rem;
+  }
+
+  .ver-mas {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .lugar-imagen img {
+    height: 180px;
+  }
+}

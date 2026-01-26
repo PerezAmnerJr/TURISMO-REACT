@@ -52,3 +52,32 @@
   background: rgba(255, 255, 255, 0.92) !important;
   backdrop-filter: blur(8px);
 }
+
+/* =========================
+   📱 Buscador responsive
+   ========================= */
+
+@media (max-width: 768px) {
+  .buscador-container {
+    width: 100%;
+    padding: 0 0;
+  }
+
+  .buscador-input {
+    width: 100% !important;
+    font-size: 1rem;
+    padding: 14px 44px 14px 16px; /* espacio para ícono */
+    border-radius: 14px;
+  }
+
+  .buscador-icono {
+    right: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .buscador-input {
+    font-size: 0.98rem;
+    padding: 13px 42px 13px 14px;
+  }
+}

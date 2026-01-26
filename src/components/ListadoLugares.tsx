@@ -22,12 +22,14 @@ export function ListadoLugares({
 
   return (
     <div className="listado-container">
-      {lugares.map((lugar) => (
-        <div
-          key={lugar.id}
-          className="lugar-card"
-          onClick={() => onSeleccionar(lugar)}
-        >
+   {lugares.map((lugar, index) => (
+  <div
+    key={`${lugar.id}-${index}`}
+    className="lugar-card"
+    onClick={() => onSeleccionar(lugar)}
+  >
+
+        
           <div className="lugar-imagen">
             {lugar.imagen ? (
               <img src={lugar.imagen} alt={lugar.nombre} />
